@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/network-call-optimiser/static/css/main.1f713663.css",
-    "main.js": "/network-call-optimiser/static/js/main.1a6c2fdc.js",
+    "main.css": "/network-call-optimiser/static/css/main.4d8c1cad.css",
+    "main.js": "/network-call-optimiser/static/js/main.3e9bc59b.js",
     "index.html": "/network-call-optimiser/index.html",
     "static/media/delete.svg": "/network-call-optimiser/static/media/delete.c4375e0312d0dd7bdcb5acced130dd37.svg",
     "static/media/edit.svg": "/network-call-optimiser/static/media/edit.6671eb6c4f2417cfcbfbee13c65fae64.svg",
-    "main.1f713663.css.map": "/network-call-optimiser/static/css/main.1f713663.css.map",
-    "main.1a6c2fdc.js.map": "/network-call-optimiser/static/js/main.1a6c2fdc.js.map"
+    "main.4d8c1cad.css.map": "/network-call-optimiser/static/css/main.4d8c1cad.css.map",
+    "main.3e9bc59b.js.map": "/network-call-optimiser/static/js/main.3e9bc59b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f713663.css",
-    "static/js/main.1a6c2fdc.js"
+    "static/css/main.4d8c1cad.css",
+    "static/js/main.3e9bc59b.js"
   ]
 }
