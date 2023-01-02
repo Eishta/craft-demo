@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getBaseUrl = type => `http://localhost:3030/${type}`;
+const getBaseUrl = type => `https://craft-demo-server.vercel.app/${type}`;
 
 const get = async (type, dependencyList) => {
     let url = getBaseUrl(type);

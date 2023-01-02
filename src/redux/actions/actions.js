@@ -1,8 +1,4 @@
-import {
-  GET_DEPENDENCIES,
-  IS_LOADING_DEP,
-  SELECT_ID
-} from "./actionsTypes";
+import { GET_DEPENDENCIES, IS_LOADING_DEP, SELECT_ID } from "./actionsTypes";
 import { get, post, put, deleteRecord } from "../../api/apiConfig";
 import actionsTypes from "./actionsTypes";
 import { getTopoSortDFS } from "./getTopoSortDFS";
@@ -22,6 +18,19 @@ let selectedIds = {
   budgets: "",
 };
 
+// CREATE
+// action to create a new data entity record
+const addNewData = (type, data) => async (dispatch, getState) => {
+  try {
+    await post(type, data);
+    refreshData(dispatch, type, getState);
+  } catch (e) {
+    console.log(e);
+    dispatch({ type: "ERROR", error: e.message });
+  }
+};
+
+// READ
 const callGetApis = async (order, data, selectedIds, dispatch) => {
   for await (let key of order) {
     try {
@@ -45,6 +54,7 @@ const callGetApis = async (order, data, selectedIds, dispatch) => {
   }
   dispatch({ type: IS_LOADING_DEP, isLoading: false });
 };
+
 const getDependencies = () => async (dispatch) => {
   dispatch({ type: IS_LOADING_DEP, isLoading: true });
   try {
@@ -66,57 +76,24 @@ const getDependencies = () => async (dispatch) => {
     dispatch({ type: "ERROR", error: error.message });
   }
 };
-
-const changeSelection = (order, data, selectedIds) => {
-  return (dispatch) => {
-    callGetApis(order, data, selectedIds, dispatch);
-  };
-};
-
-// const editFormData = (type, id, data) => {
-//   return (dispatch, getState) => {
-//     put(type, id, data)
-//       .then((res) => {
-//         refreshData(dispatch, type, getState);
-//       })
-//       .catch((e) => {
-//         console.log(e);
-//         dispatch({ type: "ERROR", error: e.message });
-//       });
-//   };
-// };
-
+// UPDATE
+// action to update a record with 'id'
 const editFormData = (type, id, data) => async (dispatch, getState) => {
   try {
-    let res = await put(type, id, data);
+    await put(type, id, data);
     refreshData(dispatch, type, getState);
   } catch (error) {
     console.log(error);
     dispatch({ type: "ERROR", error: error.message });
   }
 };
-const addNewData = (type, data) => async (dispatch, getState) => {
-  try {
-    let res = await post(type, data);
-    refreshData(dispatch, type, getState);
-  } catch (e) {
-    console.log(e);
-    dispatch({ type: "ERROR", error: e.message });
-  }
+const changeSelection = (order, data, selectedIds) => {
+  return (dispatch) => {
+    callGetApis(order, data, selectedIds, dispatch);
+  };
 };
 
-// // action to create a new data entity record
-// const addNewData = (type, data) => async (dispatch, getState) => {
-//     let res = await
-//   post(type, data)
-//     .then((res) => {
-//       refreshData(dispatch, type, getState);
-//     })
-//     .catch((e) => {
-//       console.log(e);
-//       dispatch({ type: "ERROR", error: error.message });
-//     });
-// };
+
 
 // function to map the dependency and the value for a get request for entity
 const getQueryObj = (fields, selectedIds, dependencies) => {
@@ -128,6 +105,7 @@ const getQueryObj = (fields, selectedIds, dependencies) => {
   return obj;
 };
 
+// DELETE
 // action creator for delete entity
 const deleteData = (type, id) => {
   return (dispatch, getState) => {

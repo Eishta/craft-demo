@@ -16,7 +16,7 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                <Route exact path='/network-call-optimiser' element={< Home />}></Route>
+                <Route exact path='/craft-demo' element={< Home />}></Route>
                 <Route exact path='/' element={< Home />}></Route>
                 <Route exact path='/edit/:type/:id' element={< EditEntity />}></Route>
                 <Route exact path='/add/:type' element={< AddEntity />}></Route>

@@ -1,7 +1,12 @@
 {
   "dependencies": {
-    "transactions": ["accounts"],
-    "trends": ["transactions", "budgets"]
+    "transactions": [
+      "accounts"
+    ],
+    "trends": [
+      "transactions",
+      "budgets"
+    ]
   },
   "accounts": [
     {
