@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/craft-demo/static/css/main.4d8c1cad.css",
-    "main.js": "/craft-demo/static/js/main.a0dc3638.js",
+    "main.js": "/craft-demo/static/js/main.cba6ac7d.js",
     "index.html": "/craft-demo/index.html",
     "static/media/delete.svg": "/craft-demo/static/media/delete.c4375e0312d0dd7bdcb5acced130dd37.svg",
     "static/media/edit.svg": "/craft-demo/static/media/edit.6671eb6c4f2417cfcbfbee13c65fae64.svg",
     "main.4d8c1cad.css.map": "/craft-demo/static/css/main.4d8c1cad.css.map",
-    "main.a0dc3638.js.map": "/craft-demo/static/js/main.a0dc3638.js.map"
+    "main.cba6ac7d.js.map": "/craft-demo/static/js/main.cba6ac7d.js.map"
   },
   "entrypoints": [
     "static/css/main.4d8c1cad.css",
-    "static/js/main.a0dc3638.js"
+    "static/js/main.cba6ac7d.js"
   ]
 }
