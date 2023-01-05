@@ -35,7 +35,7 @@ For example the dependency of entities coming from the server is as below:-
 ```
 ### Dependency Graph 
 
-![image](https://user-images.githubusercontent.com/55315778/210565554-ef28ee14-a23b-4036-a67e-f3abedae2226.png)
+![image](https://user-images.githubusercontent.com/55315778/210706255-a2252edd-7fac-40ad-ba8e-ec8cfdcbe6ae.png)
 
 <b>Algo used to resolve dependencies - Topological sort using DFS</b>
 
